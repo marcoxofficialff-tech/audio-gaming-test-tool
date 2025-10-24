@@ -7,9 +7,23 @@
     <meta name="description" content="Free online tool to test earbuds audio, measure latency, and train footsteps detection for gaming. Improve your BGMI/PUBG gameplay with our audio testing tools.">
     <meta name="keywords" content="earbud test, audio latency, footsteps detection, gaming audio, BGMI, PUBG, headphone test, sound test">
     <meta name="author" content="Audio Gaming Tools">
+    
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Audio & Gaming Test Tool - Test Your Earbuds & Gaming Audio">
+    <meta property="og:description" content="Free online tool to test earbuds, measure audio latency, and train footsteps detection for BGMI/PUBG gaming.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/audio-gaming-test">
+    <meta property="og:image" content="https://yourwebsite.com/images/audio-test-preview.jpg">
+    <meta property="og:site_name" content="Audio Gaming Tools">
+    
+    <!-- X Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Audio & Gaming Test Tool">
+    <meta name="twitter:description" content="Test your earbuds, measure latency, and train footsteps detection for better gaming performance.">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/audio-test-preview.jpg">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* All CSS styles from previous code */
         :root {
             --primary: #4361ee;
             --secondary: #3a0ca3;
@@ -99,6 +113,165 @@
             justify-content: center;
             cursor: pointer;
             font-size: 1.2rem;
+        }
+
+        /* Social Sharing Styles */
+        .social-sharing {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            color: white;
+            font-size: 0.95rem;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .share-facebook {
+            background: #3b5998;
+        }
+        
+        .share-x {
+            background: #000000;
+        }
+        
+        .share-whatsapp {
+            background: #25d366;
+        }
+        
+        .share-linkedin {
+            background: #0077b5;
+        }
+        
+        .share-reddit {
+            background: #ff4500;
+        }
+        
+        .share-telegram {
+            background: #0088cc;
+        }
+        
+        .share-copy {
+            background: var(--primary);
+        }
+        
+        .share-btn i {
+            font-size: 1.1rem;
+        }
+        
+        .share-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            border: 1px solid var(--card-border);
+        }
+        
+        .share-section h3 {
+            margin-bottom: 20px;
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .share-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            display: none;
+        }
+        
+        .share-message.success {
+            background: rgba(76, 201, 240, 0.2);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+        
+        .share-message.error {
+            background: rgba(247, 37, 133, 0.2);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            display: block;
+        }
+        
+        /* Results Share Section */
+        .results-share {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--card-border);
+        }
+        
+        .results-text {
+            flex: 1;
+        }
+        
+        .results-text h4 {
+            margin-bottom: 5px;
+            color: var(--success);
+        }
+        
+        .share-results-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-results-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile responsiveness for social sharing */
+        @media (max-width: 768px) {
+            .social-sharing {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 200px;
+                justify-content: center;
+            }
+            
+            .results-share {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
         }
 
         .tabs {
@@ -658,15 +831,6 @@
             }
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F0LN258E3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5F0LN258E3');
-</script>
 </head>
 <body>
     <div class="container">
@@ -677,6 +841,43 @@
                 <i class="fas fa-moon"></i>
             </div>
         </header>
+
+        <!-- Social Sharing Section -->
+        <div class="share-section">
+            <h3><i class="fas fa-share-alt"></i> Share This Tool</h3>
+            <p>Help other gamers improve their audio setup by sharing this tool</p>
+            <div class="social-sharing">
+                <button class="share-btn share-facebook" data-platform="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-btn share-x" data-platform="x">
+                    <i class="fab fa-x-twitter"></i>
+                    <span>X</span>
+                </button>
+                <button class="share-btn share-whatsapp" data-platform="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-btn share-linkedin" data-platform="linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </button>
+                <button class="share-btn share-reddit" data-platform="reddit">
+                    <i class="fab fa-reddit-alien"></i>
+                    <span>Reddit</span>
+                </button>
+                <button class="share-btn share-telegram" data-platform="telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </button>
+                <button class="share-btn share-copy" id="copyLinkBtn">
+                    <i class="fas fa-link"></i>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+            <div class="share-message" id="shareMessage"></div>
+        </div>
 
         <div class="tabs">
             <div class="tab active" data-tab="earbud-test">Earbud Test</div>
@@ -718,6 +919,17 @@
 
                     <div class="status" id="earbudStatus">
                         Click on the left or right earbud button to test each side
+                    </div>
+
+                    <!-- Results Share Section for Earbud Test -->
+                    <div class="results-share" id="earbudResultsShare" style="display: none;">
+                        <div class="results-text">
+                            <h4>Earbud Test Complete!</h4>
+                            <p>Both earbuds are working correctly with balanced audio.</p>
+                        </div>
+                        <button class="share-results-btn" data-test="earbud">
+                            <i class="fas fa-share"></i> Share Results
+                        </button>
                     </div>
 
                     <div class="instructions">
@@ -767,6 +979,17 @@
                             <div class="stat-value latency-good" id="bestLatency">0 ms</div>
                             <div>Latency</div>
                         </div>
+                    </div>
+                    
+                    <!-- Results Share Section for Latency Test -->
+                    <div class="results-share" id="latencyResultsShare" style="display: none;">
+                        <div class="results-text">
+                            <h4>Latency Test Results</h4>
+                            <p>Your average latency: <span id="shareLatencyValue">0 ms</span> - <span id="shareLatencyStatus">Good for gaming</span></p>
+                        </div>
+                        <button class="share-results-btn" data-test="latency">
+                            <i class="fas fa-share"></i> Share Results
+                        </button>
                     </div>
                     
                     <div class="latency-history">
@@ -851,6 +1074,17 @@
                     </div>
                 </div>
                 
+                <!-- Results Share Section for Footsteps Training -->
+                <div class="results-share" id="footstepsResultsShare" style="display: none;">
+                    <div class="results-text">
+                        <h4>Footsteps Training Complete!</h4>
+                        <p>Your accuracy: <span id="shareAccuracyValue">100%</span> with a streak of <span id="shareStreakValue">0</span></p>
+                    </div>
+                    <button class="share-results-btn" data-test="footsteps">
+                        <i class="fas fa-share"></i> Share Results
+                    </button>
+                </div>
+                
                 <div class="test-controls">
                     <button class="btn btn-success" id="startTraining">
                         <i class="fas fa-play"></i> Start Training
@@ -887,6 +1121,132 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Social Sharing Functionality
+            const shareButtons = document.querySelectorAll('.share-btn');
+            const copyLinkBtn = document.getElementById('copyLinkBtn');
+            const shareMessage = document.getElementById('shareMessage');
+            const shareResultsButtons = document.querySelectorAll('.share-results-btn');
+            
+            // Page URL and sharing text
+            const pageUrl = encodeURIComponent(window.location.href);
+            const pageTitle = encodeURIComponent('Audio & Gaming Test Tool');
+            const shareText = encodeURIComponent('Check out this awesome Audio & Gaming Test Tool! Test your earbuds, measure latency, and train footsteps detection for better gaming performance.');
+            
+            // Social sharing URLs
+            const socialUrls = {
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
+                x: `https://twitter.com/intent/tweet?text=${shareText}&url=${pageUrl}`,
+                whatsapp: `https://api.whatsapp.com/send?text=${shareText} ${pageUrl}`,
+                linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`,
+                reddit: `https://reddit.com/submit?url=${pageUrl}&title=${pageTitle}`,
+                telegram: `https://t.me/share/url?url=${pageUrl}&text=${shareText}`
+            };
+            
+            // Set up social sharing buttons
+            shareButtons.forEach(button => {
+                if (button.id !== 'copyLinkBtn') {
+                    const platform = button.getAttribute('data-platform');
+                    button.addEventListener('click', () => {
+                        window.open(socialUrls[platform], '_blank', 'width=600,height=400');
+                        showShareMessage(`Shared on ${platform.charAt(0).toUpperCase() + platform.slice(1)} successfully!`, 'success');
+                    });
+                }
+            });
+            
+            // Copy link functionality
+            copyLinkBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(window.location.href)
+                    .then(() => {
+                        showShareMessage('Link copied to clipboard!', 'success');
+                    })
+                    .catch(err => {
+                        showShareMessage('Failed to copy link. Please try again.', 'error');
+                        console.error('Could not copy text: ', err);
+                    });
+            });
+            
+            // Share results functionality
+            shareResultsButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const testType = this.getAttribute('data-test');
+                    let resultsText = '';
+                    
+                    switch(testType) {
+                        case 'earbud':
+                            resultsText = 'I just tested my earbuds with the Audio & Gaming Test Tool! Both earbuds are working perfectly.';
+                            break;
+                        case 'latency':
+                            const latencyValue = document.getElementById('shareLatencyValue').textContent;
+                            const latencyStatus = document.getElementById('shareLatencyStatus').textContent;
+                            resultsText = `I measured my audio latency: ${latencyValue} - ${latencyStatus}. Test yours now!`;
+                            break;
+                        case 'footsteps':
+                            const accuracyValue = document.getElementById('shareAccuracyValue').textContent;
+                            const streakValue = document.getElementById('shareStreakValue').textContent;
+                            resultsText = `I trained my footsteps detection: ${accuracyValue} accuracy with ${streakValue} streak! Can you beat my score?`;
+                            break;
+                    }
+                    
+                    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(resultsText)}&url=${pageUrl}`;
+                    window.open(shareUrl, '_blank', 'width=600,height=400');
+                    showShareMessage('Results shared successfully!', 'success');
+                });
+            });
+            
+            // Function to show share messages
+            function showShareMessage(message, type) {
+                shareMessage.textContent = message;
+                shareMessage.className = `share-message ${type}`;
+                
+                setTimeout(() => {
+                    shareMessage.style.display = 'none';
+                }, 3000);
+            }
+            
+            // Show results share sections when tests are completed
+            // For Earbud Test - show after both earbuds have been tested
+            let leftTested = false;
+            let rightTested = false;
+            
+            document.getElementById('testLeftEarbud').addEventListener('click', function() {
+                leftTested = true;
+                checkEarbudTestCompletion();
+            });
+            
+            document.getElementById('testRightEarbud').addEventListener('click', function() {
+                rightTested = true;
+                checkEarbudTestCompletion();
+            });
+            
+            function checkEarbudTestCompletion() {
+                if (leftTested && rightTested) {
+                    document.getElementById('earbudResultsShare').style.display = 'flex';
+                }
+            }
+            
+            // For Latency Test - show after first test completion
+            document.getElementById('startLatencyTest').addEventListener('click', function() {
+                // Simulate showing results share after test completion
+                setTimeout(() => {
+                    document.getElementById('latencyResultsShare').style.display = 'flex';
+                    document.getElementById('shareLatencyValue').textContent = document.getElementById('averageLatency').textContent;
+                    
+                    const latency = parseFloat(document.getElementById('averageLatency').textContent);
+                    let status = 'Excellent for gaming!';
+                    if (latency > 100) status = 'Could be better for gaming';
+                    else if (latency > 50) status = 'Good for gaming';
+                    
+                    document.getElementById('shareLatencyStatus').textContent = status;
+                }, 2000);
+            });
+            
+            // For Footsteps Training - show when training ends
+            document.getElementById('stopTraining').addEventListener('click', function() {
+                document.getElementById('footstepsResultsShare').style.display = 'flex';
+                document.getElementById('shareAccuracyValue').textContent = document.getElementById('accuracyValue').textContent;
+                document.getElementById('shareStreakValue').textContent = document.getElementById('streakCount').textContent;
+            });
+            
             // Theme toggle functionality
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = themeToggle.querySelector('i');
@@ -1159,9 +1519,83 @@
                 bestStreak: 0
             };
             
-            // Use generated footsteps sound instead of external file
+            // Preload footstep sound
+            let footstepSound = null;
+            const audio = new Audio();
+            audio.src = 'https://cdn.pixabay.com/download/audio/2022/03/15/audio_106711d0c0.mp3?filename=footsteps-stairs-slow-106711.mp3';
+            audio.preload = 'auto';
+            
+            audio.addEventListener('canplaythrough', function() {
+                footstepSound = audio;
+                console.log('Footstep sound loaded');
+            });
+            
+            function getRandomDirection() {
+                const directions = ['northwest', 'north', 'northeast', 'west', 'east', 'southwest', 'south', 'southeast'];
+                return directions[Math.floor(Math.random() * directions.length)];
+            }
+            
             function playDirectionalFootsteps(direction) {
-                playGeneratedFootsteps(direction);
+                if (!footstepSound) {
+                    // Fallback to generated sound if real sound isn't loaded
+                    playGeneratedFootsteps(direction);
+                    return;
+                }
+                
+                const audioCtx = initAudio();
+                
+                // Create audio source from the loaded sound
+                const source = audioCtx.createMediaElementSource(footstepSound);
+                
+                // Create pan node for directional audio
+                const panNode = audioCtx.createStereoPanner();
+                
+                // Set pan based on direction
+                let panValue = 0;
+                
+                switch(direction) {
+                    case 'northwest':
+                        panValue = -0.7;
+                        break;
+                    case 'north':
+                        panValue = -0.3;
+                        break;
+                    case 'northeast':
+                        panValue = 0.7;
+                        break;
+                    case 'west':
+                        panValue = -1;
+                        break;
+                    case 'east':
+                        panValue = 1;
+                        break;
+                    case 'southwest':
+                        panValue = -0.7;
+                        break;
+                    case 'south':
+                        panValue = 0.3;
+                        break;
+                    case 'southeast':
+                        panValue = 0.7;
+                        break;
+                    default:
+                        panValue = 0;
+                }
+                
+                panNode.pan.value = panValue;
+                
+                // Create gain node for volume control
+                const gainNode = audioCtx.createGain();
+                gainNode.gain.value = volume;
+                
+                // Connect the audio graph
+                source.connect(panNode);
+                panNode.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                
+                // Play the sound
+                footstepSound.currentTime = 0;
+                footstepSound.play();
             }
             
             function playGeneratedFootsteps(direction) {
@@ -1265,11 +1699,6 @@
                 
                 footstepsStatus.textContent = "Footsteps played! Click where you think the sound came from.";
                 footstepsStatus.className = "status";
-            }
-            
-            function getRandomDirection() {
-                const directions = ['northwest', 'north', 'northeast', 'west', 'east', 'southwest', 'south', 'southeast'];
-                return directions[Math.floor(Math.random() * directions.length)];
             }
             
             function checkGuess(guessedDirection) {
